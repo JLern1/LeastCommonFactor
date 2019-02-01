@@ -11,17 +11,21 @@ namespace LCFBusiness
         public int CheckValues(int firstNum, int secondNum)
         {
             int i = 2;
-            bool firstNumCheck = false;
-            bool SecondNumCheck = false;
+            bool areBothDivisible;
             do
             {
-
-                firstNumCheck = firstNum % i == 0;
-                SecondNumCheck = secondNum % i == 0;
+                areBothDivisible = AreBothDivisible(firstNum, secondNum, i);
                 ++i;
-            } while (firstNumCheck != true && SecondNumCheck != true);
+            } while (areBothDivisible != true);
 
             return i - 1;
+        }
+
+        public bool AreBothDivisible(int firstNum, int secondNum, int divisor)
+        {
+            var firstNumCheck = firstNum % divisor == 0;
+            var SecondNumCheck = secondNum % divisor == 0;
+            return (firstNumCheck && SecondNumCheck) ? true : false;
         }
     }
 }

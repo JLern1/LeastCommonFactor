@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LCFBusiness;
+using static System.Math;
 
 namespace LCF
 {
@@ -31,5 +32,7 @@ namespace LCF
             var checker = new Checker();
             return checker.CheckValues(firstNum, secondNum);
         }
+
+
     }
 }
