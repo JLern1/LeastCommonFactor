@@ -11,16 +11,21 @@ namespace LCF
     {
         static void Main(string[] args)
         {
-            Console.Write("Pick a number: ");
-            int firstNum = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-            Console.Write("Pick a number: ");
-            int secondNum = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
+            int firstNum = PickNumber();
+            int secondNum = PickNumber();
             int leastCommonFactor = CheckNumbers(firstNum, secondNum);
             Console.WriteLine($"The LCF of {firstNum} and {secondNum} is {leastCommonFactor}.");
             Console.ReadLine();
         }
+
+        private static int PickNumber()
+        {
+            Console.Write("Pick a number: ");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            return Number;
+        }
+
         public static int CheckNumbers(int firstNum, int secondNum)
         {
             var checker = new Checker();
